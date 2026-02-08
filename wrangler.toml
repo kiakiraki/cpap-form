@@ -1,0 +1,10 @@
+name = "cpap-form"
+compatibility_date = "2025-04-01"
+main = "src/index.ts"
+
+[assets]
+directory = "./public"
+
+[[services]]
+binding = "HEALTH_SYNC_API"
+service = "health-sync-api"
