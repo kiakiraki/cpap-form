@@ -1,0 +1,30 @@
+name: Update compatibility_date
+
+on:
+  schedule:
+    - cron: "0 0 1 * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Update compatibility_date
+        run: |
+          TODAY=$(date -u +%Y-%m-%d)
+          sed -i "s/^compatibility_date = .*/compatibility_date = \"$TODAY\"/" wrangler.toml
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: "chore: update compatibility_date to $(date -u +%Y-%m-%d)"
+          title: "chore: update compatibility_date to $(date -u +%Y-%m-%d)"
+          body: "Cloudflare Workers の `compatibility_date` を最新に更新します。"
+          branch: chore/update-compat-date
+          reviewers: kiakiraki
