@@ -15,7 +15,7 @@
   "type": "commonjs",
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.12.10",
-    "@cloudflare/workers-types": "^4.20260203.0",
+    "@cloudflare/workers-types": "^4.20260214.0",
     "hono": "^4.11.9",
     "typescript": "^5.9.3",
     "vitest": "~3.2.0",
