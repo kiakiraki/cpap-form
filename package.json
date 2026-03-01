@@ -14,7 +14,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
-    "@cloudflare/vitest-pool-workers": "^0.12.14",
+    "@cloudflare/vitest-pool-workers": "^0.12.18",
     "@cloudflare/workers-types": "^4.20260228.1",
     "hono": "^4.12.1",
     "typescript": "^5.9.3",
